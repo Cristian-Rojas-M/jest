@@ -14,6 +14,10 @@ class BusinessCrontroller{
         return this.repository.getAll();
     }
 
+    public async getId(id:string){
+        return this.repository.getId(id);
+    }
+
 
 }
 export default BusinessCrontroller;

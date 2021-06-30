@@ -11,6 +11,7 @@ class Route {
     private routeConfig(app:Application){
         app.route("/personas").get(this.route.getPersonas)
         app.route("/persona").post(this.route.createPersona)
+        app.route("/persona/:id").get(this.route.getID)
     }
 }
 

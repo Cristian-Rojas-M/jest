@@ -16,7 +16,7 @@ import Persona from "../model/persona.model";
 
     public async create(name:string,lastName:string,age:number) :Promise<Persona>{
         const persona = await  Persona.create({name,lastName,age});
-        console.log(persona)
+        
         if(!persona){
             throw new Error("no se creo la persona");
         }
@@ -27,8 +27,12 @@ import Persona from "../model/persona.model";
         
     }
 
-    public async getId(){
-        
+    public async getId(id:string):Promise<Persona>{
+        const persona = await Persona.findByPk(id);
+        if(!persona){
+            throw new Error("no exixte la persona");
+        }
+        return persona;
     }
 }
 
